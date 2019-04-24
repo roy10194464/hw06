@@ -4,25 +4,25 @@
  *
  */
 
-#ifndef LAB09_HEALTHTRACKER_H
+#ifndef HW06_BANKSIM_H
 
-class HealthTracker {
+class BankSim {
 private:
 
-    double weight;
-    double fatPercent;
+    double enterTime;
+    double processTime;
 
 public:
 
-    HealthTracker(double theWeight, double theFatPercent);
-    double getWeight() const;
-    void setWeight(double theWeight);
-    double getFatPercent() const;
-    void setFatPercent(double theFatPercent);
+    BankSim(int theEnterTime, int theProcessTime);
+    int getEnterTime() const;
+    void setEnterTime(int theEnterTime);
+    int getProcessTime() const;
+    void setProcessTime(int theProcessTime);
 
-    friend std::ostream& operator<<(std::ostream& os, const HealthTracker& healthTracker);
+//    friend std::ostream& operator<<(std::ostream& os, const HealthTracker& healthTracker);
 };
 
 
 
-#endif //LAB09_HEALTHTRACKER_H
+#endif
