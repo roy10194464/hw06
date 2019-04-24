@@ -20,29 +20,29 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    double weight;
-    double fatPercent;
-    std::vector<BankMember> health;
-    double sumWeight = 0;
-    double sumFatPercent = 0;
+    int enterTime;
+    int processTime;
+    std::vector<BankSim> member;
+//    double sumWeight = 0;
+//    double sumFatPercent = 0;
 
-    while (data >> weight >> fatPercent) {
-        HealthTracker ht{weight, fatPercent};
-        health.push_back(ht);
+    while (data >> enterTime >> processTime) {
+        BankSim bs{enterTime, processTime};
+        member.push_back(bs);
     }
 
-    double healthItems = health.size();
+//    double healthItems = health.size();
 
-    for(int i=0; i<healthItems; i++){
-        sumWeight += health.at(i).getWeight();
-        sumFatPercent += health.at(i).getFatPercent();
-    }
+//    for(int i=0; i<healthItems; i++){
+//        sumWeight += health.at(i).getWeight();
+//        sumFatPercent += health.at(i).getFatPercent();
+//    }
 
-    double aveWeight = sumWeight/healthItems;
-    double aveFPer = sumFatPercent/healthItems;
+//    double aveWeight = sumWeight/healthItems;
+//    double aveFPer = sumFatPercent/healthItems;
 
-    HealthTracker average{aveWeight, aveFPer};
-    std::cout << "Averages: " << average << std::endl;
+//    HealthTracker average{aveWeight, aveFPer};
+//    std::cout << "Averages: " << average << std::endl;
 
     data.close();
 

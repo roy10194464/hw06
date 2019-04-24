@@ -4,35 +4,33 @@
  *
  */
 
-#include "HealthTracker.h"
+#include "BankSim.h"
 
-// TODO: Implement member functions
-// Implement member functions
 
-HealthTracker::HealthTracker(double theWeight, double theFatPercent) : weight(theWeight), fatPercent(theFatPercent){
+BankSim::BankSim(int theEnterTime, int theProcessTime) : enterTime(theEnterTime), processTime(theProcessTime){
 
 }
 
-double HealthTracker::getWeight() const {
-    return weight;
+int BankSim::getEnterTime() const {
+    return enterTime;
 }
 
-void HealthTracker::setWeight(double theWeight) {
-
-}
-
-double HealthTracker::getFatPercent() const {
-    return fatPercent;
-}
-
-void HealthTracker::setFatPercent(double theFatPercent) {
+void BankSim::setEnterTime(int theEnterTime) {
 
 }
 
-std::ostream& operator<<(std::ostream& os, const HealthTracker& healthTracker) {
+int BankSim::getProcessTime() const {
+    return processTime;
+}
+
+void BankSim::setProcessTime(int theProcessTime) {
+
+}
+
+//std::ostream& operator<<(std::ostream& os, const HealthTracker& healthTracker) {
     // Insert health tracker data into os so that it prints out the following format:
     // Weight: 219.5, Fat Percent: 25.9%
-    os << "Weight: " << healthTracker.weight << ", Fat Percent: " << healthTracker.fatPercent << "%" ;
+//    os << "Weight: " << healthTracker.weight << ", Fat Percent: " << healthTracker.fatPercent << "%" ;
     //healthTracker.fatPercent;
-    return os;
-} 
+//    return os;
+//} 
