@@ -8,21 +8,16 @@
 
 class BankSim {
 private:
-
     int enterTime;
     int processTime;
 
 public:
-
     BankSim(int theEnterTime, int theProcessTime);
     int getEnterTime() const;
     void setEnterTime(int theEnterTime);
     int getProcessTime() const;
     void setProcessTime(int theProcessTime);
 
-//    friend std::ostream& operator<<(std::ostream& os, const HealthTracker& healthTracker);
 };
-
-
 
 #endif

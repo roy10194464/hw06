@@ -13,7 +13,7 @@
 #include "BankSim.h"
 
 int main(int argc, char* argv[]) {
-    std::cout << "program start" << std::endl;
+    std::cout << "Program start" << std::endl;
 
     std::ifstream data{"input.dat"};
     if (!data) {
@@ -48,14 +48,16 @@ int main(int argc, char* argv[]) {
 	int time = member.front().getEnterTime();
 	
 	while (!member.empty()){
-		std::cout << "service start at " << time << std::endl;
+		std::cout << "Service start at: " << time << std::endl;
 		int occupyTime = member.front().getProcessTime();
 		for (int i = 0; i < occupyTime; i++) time += 1;
 		member.pop();
-		std::cout << "service ended at " << time << std::endl;
+		std::cout << "Service ended at: " << time << std::endl;
 	}
 
     data.close();
+
+	std::cout << "Program end." << std::endl;
 
     return EXIT_SUCCESS;
 }
