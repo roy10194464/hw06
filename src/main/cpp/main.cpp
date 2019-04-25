@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 		}
 	}
 	while (!organize.empty()){
-        member.push(organize.front());
+		member.push(organize.front());
 		organize.erase(organize.begin());
     }
 	
