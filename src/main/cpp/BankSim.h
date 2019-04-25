@@ -9,8 +9,8 @@
 class BankSim {
 private:
 
-    double enterTime;
-    double processTime;
+    int enterTime;
+    int processTime;
 
 public:
 

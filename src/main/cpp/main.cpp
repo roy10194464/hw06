@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <queue>
 #include "BankSim.h"
 
 int main(int argc, char* argv[]) {
@@ -22,27 +23,37 @@ int main(int argc, char* argv[]) {
 
     int enterTime;
     int processTime;
-    std::vector<BankSim> member;
-//    double sumWeight = 0;
-//    double sumFatPercent = 0;
+	std::vector<BankSim> organize;
+    std::queue<BankSim> member;
 
     while (data >> enterTime >> processTime) {
-        BankSim bs{enterTime, processTime};
-        member.push_back(bs);
+		bool placed = false;
+		BankSim bs{enterTime, processTime};
+		if (organize.empty()) organize.push_back(bs);
+		else{
+			for (int i = 0; i < organize.size() && !placed; i++){
+				if(bs.getEnterTime() < organize.at(i).getEnterTime){
+					organize.insert(i, bs);
+				}
+				
+			}
+			if (!placed) organize.push_back(bs);
+		}
+	}
+	while (!organize.empty()){
+        member.push(organize.front());
+		organize.erase(organize.begin());
     }
-
-//    double healthItems = health.size();
-
-//    for(int i=0; i<healthItems; i++){
-//        sumWeight += health.at(i).getWeight();
-//        sumFatPercent += health.at(i).getFatPercent();
-//    }
-
-//    double aveWeight = sumWeight/healthItems;
-//    double aveFPer = sumFatPercent/healthItems;
-
-//    HealthTracker average{aveWeight, aveFPer};
-//    std::cout << "Averages: " << average << std::endl;
+	
+	int time = member.front().getEnterTime();
+	
+	while (!member.empty()){
+		std::cout << "service start at " << time << std::endl;
+		int occupyTime = member.front().getProcessTime();
+		for (int i = 0; i < occupyTime; i++) time += 1;
+		member.pop();
+		std::cout << "service ended at " << time << std::endl;
+	}
 
     data.close();
 
