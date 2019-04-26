@@ -34,6 +34,7 @@ int main(int argc, char* argv[]) {
 			for (int i = 0; i < organize.size() && !placed; i++){
 				if(bs.getEnterTime() < organize.at(i).getEnterTime){
 					organize.insert(i, bs);
+					placed = true;
 				}
 				
 			}
