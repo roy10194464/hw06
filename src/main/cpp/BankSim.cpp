@@ -25,4 +25,3 @@ int BankSim::getProcessTime() const {
 void BankSim::setProcessTime(int theProcessTime) {
 
 }
-
