@@ -52,10 +52,18 @@ set(CMAKE_CXX_STANDARD 14)
 set(SRC_MAIN_FILES
         src/main/cpp/Main.cpp
         src/main/cpp/BankSim.cpp src/main/cpp/BankSim.h)
+set(SRC_DEMO_FILES
+        src/main/cpp/Main.cpp
+        src/main/cpp/BankSim.cpp src/main/cpp/BankSim.h)
+set(SRC_TEST_FILES
+        src/main/cpp/Main.cpp
+        src/main/cpp/BankSim.cpp src/main/cpp/BankSim.h)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/out)
 
 add_executable(hw06 ${SRC_MAIN_FILES})
+add_executable(hw06Demo ${SRC_DEMO_FILES})
+add_executable(hw06Test ${SRC_TEST_FILES})
 
 if (APPLE)
     include_directories(hw06Test PUBLIC /usr/local/include)
